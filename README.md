@@ -12,6 +12,7 @@ image is blurry or not. in Explain and perform some experiments with your own im
 2. Explain how it is useful, and some usecases
   * Maybe show an example of a simple usecase
 3. Do some experimenting with images with different level of blurs
-4. Find an to detect if the image is blurry or not based on the DFT output
+4. Find a way to detect if the image is blurry or not based on the DFT output
   * Try and draw some conclusions.
+  * Maybe use some inspiration from [this project](https://pyimagesearch.com/2020/06/15/opencv-fast-fourier-transform-fft-for-blur-detection-in-images-and-video-streams/)
 5. Visualize and present the results
