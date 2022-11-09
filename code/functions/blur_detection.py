@@ -50,11 +50,12 @@ def blur_detector(
     score = np.mean(recon_mag)
     
     # Images that are to be returned for visualization
-    step_images = [image,                   # Original image
-                   mag(G_shift),            # Shifted magnitude
-                   mag(G_shift_filtered),   # Filtered shifted magnitude
-                   np.real(recon),          # The real part of the recon. image
-                   mag(recon),              # Magnnitude of the recon. image
+    step_images = [
+        image,                   # Original image
+        mag(G_shift),            # Shifted magnitude
+        mag(G_shift_filtered),   # Filtered shifted magnitude
+        np.real(recon),          # The real part of the recon. image
+        mag(recon),              # Magnnitude of the recon. image
     ]
 
     return {
