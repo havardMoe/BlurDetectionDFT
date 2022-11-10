@@ -64,12 +64,15 @@ def blur_detector(
         'step_images': step_images
     }
 
-def plot_images(images, labels=['original image', 'magnitude', 
+def plot_steps(
+    images, 
+    labels=['original image', 'magnitude', 
                                 'magnitude-filtered', 'reconstructed image', 
-                                'magnitude of the reconstructed image']):
+                                'magnitude of the reconstructed image'],
+    suptitle='Step by step in the blur_detection algorithm'):
     frec_scale = (images[1].min(), images[1].max())
     plt.figure(figsize=(12, 12))
-    plt.suptitle('Step by step in the blur_detection algorithm')
+    plt.suptitle(suptitle)
     for i, img in enumerate(images):
         plt.subplot(int(f'23{i+1}'))
         plt.title(str(labels[i]))
@@ -86,7 +89,7 @@ def main():
     # a threshold of 8 and a size of 50 seems to work well for a lot of images
     r = blur_detector(lenna, thresh=8, size=50)
     # Plot images for each step in the process
-    plot_images(r['step_images'])
+    plot_steps(r['step_images'])
     plt.show()
     # Print results to terminal
     print(f'is_blurry: {r["is_blurry"]}')
